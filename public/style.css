@@ -1,3 +1,45 @@
+:root {
+  --correct-answer-bg-color: rgba(149, 211, 149, 0.65);
+  --correct-answer-border-color: rgb(24, 122, 15);
+
+  --incorrect-answer-bg-color: rgba(214, 99, 99, 0.65);
+  --incorrect-answer-border-color: rgb(114, 28, 28);
+
+  --hover-color: rgba(161, 161, 161, 0.25);
+
+  --default-border-radius: 8px;
+  --default-border-style: 1px solid #b7b7b7;
+  --default-transition: all 0.25s ease-out;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+button {
+  font-size: 1.125rem;
+  font-weight: 600;
+	cursor: pointer;
+  outline: none;
+  border: var(--default-border-style);
+  border-radius: var(--default-border-radius);
+  background-color: transparent;
+	padding: 0.8rem 1.25rem;
+	transition: var(--default-transition);
+}
+
+button:hover{
+  background-color: var(--hover-color);
+}
+
+button:active {
+	scale: 0.995;
+}
+
 .centered {
   position: fixed;
   top: 50%;
@@ -14,4 +56,65 @@
 
 ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.answer-option {
+  text-align: start;
+  font-weight: 550;
+  cursor: pointer;
+  padding: 1rem;
+  border: var(--default-border-style);
+  border-radius: var(--default-border-radius);
+  transition: var(--default-transition);
+}
+
+.answer-option:hover {
+  background-color: var(--hover-color);
+}
+
+.correct-answer {
+  background-color: var(--correct-answer-bg-color);
+  border-color: var(--correct-answer-border-color);
+  animation: correctAnswerScaleUp 0.25s ease;
+}
+
+.correct-answer:hover {
+  background-color: var(--correct-answer-bg-color);
+}
+
+.incorrect-answer {
+  background-color: var(--incorrect-answer-bg-color);
+  border-color: var(--incorrect-answer-border-color);
+}
+
+.incorrect-answer:hover {
+  background-color: var(--incorrect-answer-bg-color);
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.animateWithFadeAndSlide {
+  animation: fadeAndSlide 0.4s ease;
+}
+
+@keyframes correctAnswerScaleUp {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeAndSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
