@@ -2,10 +2,11 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
-  TIMER_CONTAINER,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
+import { createTimerElement } from '../views/timerView.js';
+
 import { quizData } from '../data.js';
 
 export const initQuestionPage = () => {
@@ -13,9 +14,13 @@ export const initQuestionPage = () => {
   userInterface.innerHTML = '';
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
+  const timerElement = createTimerElement();
+  userInterface.appendChild(timerElement);
+  let remainingTime = parseInt(sessionStorage.getItem('remainingTime'));
+  console.log(remainingTime);
   const questionElement = createQuestionElement(currentQuestion.text);
   questionElement.classList.add('animateWithFadeAndSlide');
-  
+
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
@@ -29,6 +34,26 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
     answersListElement.classList.add('animateWithFadeAndSlide');
   });
+
+  timerElement.textContent = `${Math.floor(remainingTime / 60)
+    .toString()
+    .padStart(2, '0')}:${Math.floor(remainingTime % 60)
+    .toString()
+    .padStart(2, '0')}`;
+  const interval = setInterval(() => {
+    if (remainingTime > 0) {
+      remainingTime--;
+      const minutes = Math.floor(remainingTime / 60);
+      const seconds = remainingTime % 60;
+      timerElement.textContent = `${minutes
+        .toString()
+        .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    } else {
+      clearInterval(interval);
+      sessionStorage.removeItem('remainingTime');
+      timerElement.textContent = `Time\'s up!`;
+    }
+  }, 1000);
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
