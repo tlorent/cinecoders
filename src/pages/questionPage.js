@@ -7,7 +7,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
-
+import { initFinalPage } from './finalPage.js';
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -29,14 +29,24 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
     answersListElement.classList.add('animateWithFadeAndSlide');
   });
-
-  document
-    .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion);
+if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
+    document
+      .getElementById(NEXT_QUESTION_BUTTON_ID)
+      .addEventListener('click', toFinalPage);
+  } else {
+    document
+      .getElementById(NEXT_QUESTION_BUTTON_ID)
+      .addEventListener('click', nextQuestion);
+  }
 };
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
+};
+
+const toFinalPage = () => {
+  const score = initFinalPage(quizData.currentScore, quizData.questions.length);
+  document.getElementById(USER_INTERFACE_ID).appendChild(score);
 };

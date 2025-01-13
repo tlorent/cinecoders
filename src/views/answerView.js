@@ -2,6 +2,8 @@
  * Create an Answer element
  * @returns {Element}
  */
+
+import { quizData } from '../data.js';
 export const createAnswerElement = (answerText, answerIndex, correctIndex) => {
   const answerOptionEl = document.createElement('li');
   answerOptionEl.classList.add('answer-option')
@@ -24,6 +26,7 @@ const checkSelectedAnswer = (answerOptionEl, answerIndex, correctIndex) => {
 
   if (isCorrectAnswerSelected) {
     answerOptionEl.classList.add('correct-answer');
+    quizData.currentScore++;
   } else {
     answerOptionEl.classList.add('incorrect-answer');
     const allAnswerOptions = document.querySelectorAll('.answer-option');
