@@ -14,15 +14,21 @@ export const initQuestionPage = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
-
+  questionElement.classList.add('animateWithFadeAndSlide');
+  
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-  for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const answerElement = createAnswerElement(key, answerText);
+  Object.values(currentQuestion.answers).forEach((answerText, index) => {
+    const answerElement = createAnswerElement(
+      answerText,
+      index,
+      currentQuestion.correctAnswerIndex
+    );
     answersListElement.appendChild(answerElement);
-  }
+    answersListElement.classList.add('animateWithFadeAndSlide');
+  });
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
