@@ -15,7 +15,7 @@ export const initQuestionPage = () => {
 
   const questionElement = createQuestionElement(currentQuestion.text);
   questionElement.classList.add('animateWithFadeAndSlide');
-  
+
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
@@ -29,7 +29,7 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
     answersListElement.classList.add('animateWithFadeAndSlide');
   });
-if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
+  if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
     document
       .getElementById(NEXT_QUESTION_BUTTON_ID)
       .addEventListener('click', toFinalPage);

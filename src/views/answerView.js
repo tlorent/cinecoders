@@ -6,15 +6,11 @@
 import { quizData } from '../data.js';
 export const createAnswerElement = (answerText, answerIndex, correctIndex) => {
   const answerOptionEl = document.createElement('li');
-  answerOptionEl.classList.add('answer-option')
+  answerOptionEl.classList.add('answer-option');
   answerOptionEl.innerHTML = `${answerText}`;
 
   answerOptionEl.addEventListener('click', () => {
-    checkSelectedAnswer(
-      answerOptionEl,
-      answerIndex,
-      correctIndex
-    );
+    checkSelectedAnswer(answerOptionEl, answerIndex, correctIndex);
   });
 
   return answerOptionEl;
@@ -32,9 +28,9 @@ const checkSelectedAnswer = (answerOptionEl, answerIndex, correctIndex) => {
     const allAnswerOptions = document.querySelectorAll('.answer-option');
     allAnswerOptions[correctIndex].classList.add('correct-answer');
   }
-}
+};
 
 const disableFurtherClicks = () => {
   const allAnswerOptions = document.querySelectorAll('.answer-option');
-  allAnswerOptions.forEach(answer => answer.classList.add('disabled'));
-}
+  allAnswerOptions.forEach((answer) => answer.classList.add('disabled'));
+};
