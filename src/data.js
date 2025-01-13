@@ -15,14 +15,15 @@ export const quizData = {
   // the questions in the quiz
   questions: [
     {
-      text: 'What is the name of the spaceship in Star Wars piloted by Han Solo?',
+      text:
+        'What is the name of the spaceship in Star Wars piloted by Han Solo?',
       answers: {
         a: 'Star Destroyer',
         b: 'Millennium Falcon',
         c: 'X-Wing',
-        d: 'Solar Sailor'
+        d: 'Solar Sailor',
       },
-      correctAnswerIndex: 1,  
+      correctAnswerIndex: 1,
     },
     {
       text: 'Which of these actors below did not play Spider Man?',
@@ -32,10 +33,11 @@ export const quizData = {
         c: 'Tobey Maguire',
         d: 'Henry Cavill',
       },
-      correctAnswerIndex: 3, 
+      correctAnswerIndex: 3,
     },
     {
-      text: 'In the Harry Potter series, what house does Draco Malfoy belong to?',
+      text:
+        'In the Harry Potter series, what house does Draco Malfoy belong to?',
       answers: {
         a: 'Slytherin',
         b: 'Hufflepuff',
@@ -45,7 +47,8 @@ export const quizData = {
       correctAnswerIndex: 0,
     },
     {
-      text: 'Who directed movies like Royal Tenenbaums, Grand Budapest Hotel, and the Moonrise Kingdom?',
+      text:
+        'Who directed movies like Royal Tenenbaums, Grand Budapest Hotel, and the Moonrise Kingdom?',
       answers: {
         a: 'Sofia Coppola',
         b: 'Paul Thomas Anderson',
@@ -65,7 +68,8 @@ export const quizData = {
       correctAnswerIndex: 1,
     },
     {
-      text: 'In The Shining, what is the name of the hotel where the story takes place?',
+      text:
+        'In The Shining, what is the name of the hotel where the story takes place?',
       answers: {
         a: 'The Overlook Hotel',
         b: 'The Bates Motel',
@@ -75,7 +79,8 @@ export const quizData = {
       correctAnswerIndex: 0,
     },
     {
-      text: 'Which was the first anime to win the Academy Award for Best Animated Feature?',
+      text:
+        'Which was the first anime to win the Academy Award for Best Animated Feature?',
       answers: {
         a: 'Akira',
         b: 'Ghost in the Shell',

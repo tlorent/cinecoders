@@ -2,6 +2,7 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  TIMER_CONTAINER,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
@@ -10,7 +11,6 @@ import { quizData } from '../data.js';
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
