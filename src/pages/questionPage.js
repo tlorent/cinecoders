@@ -24,31 +24,30 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
   }
-  answersListElement.addEventListener('click',function(e){
-  const selectedBtn = e.target;
-  const answerFromUser = selectedBtn.textContent.split(':')[0].trim()
-  console.log(answerFromUser)
-  const correctAnswer =quizData.questions[quizData.currentQuestionIndex].correct
-  console.log(correctAnswer)
-  const isCorrect = answerFromUser === correctAnswer
-  if(isCorrect){
-    selectedBtn.classList.add('correct')
-    quizData.currentScore++ 
-  }
-  else{
-     selectedBtn.classList.add('incorrect')
-     
-  }
- })
+  answersListElement.addEventListener('click', function (e) {
+    const selectedBtn = e.target;
+    const answerFromUser = selectedBtn.textContent.split(':')[0].trim();
+    console.log(answerFromUser);
+    const correctAnswer =
+      quizData.questions[quizData.currentQuestionIndex].correct;
+    console.log(correctAnswer);
+    const isCorrect = answerFromUser === correctAnswer;
+    if (isCorrect) {
+      selectedBtn.classList.add('correct');
+      quizData.currentScore++;
+    } else {
+      selectedBtn.classList.add('incorrect');
+    }
+  });
 
- if(quizData.currentQuestionIndex === quizData.questions.length -1){
-
-  document.getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', toFinalPage);
- }
-  else{
-     document.getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion);
+  if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
+    document
+      .getElementById(NEXT_QUESTION_BUTTON_ID)
+      .addEventListener('click', toFinalPage);
+  } else {
+    document
+      .getElementById(NEXT_QUESTION_BUTTON_ID)
+      .addEventListener('click', nextQuestion);
   }
 };
 
@@ -58,8 +57,7 @@ const nextQuestion = () => {
   initQuestionPage();
 };
 
-const toFinalPage = () =>{
-  const score =  initFinalPage(quizData.currentScore , quizData.questions.length)
-  document.getElementById(USER_INTERFACE_ID).appendChild(score)
-  
-}
+const toFinalPage = () => {
+  const score = initFinalPage(quizData.currentScore, quizData.questions.length);
+  document.getElementById(USER_INTERFACE_ID).appendChild(score);
+};

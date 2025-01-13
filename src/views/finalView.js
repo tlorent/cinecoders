@@ -1,11 +1,10 @@
-
 import { RESTART_QUIZ_BUTTON_ID } from '../constants.js';
 
 /**
  * Create a full question element
  * @returns {Element}
  */
-export const createFinalElement = (score,question) => {
+export const createFinalElement = (score, question) => {
   const element = document.createElement('div');
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.

@@ -12,7 +12,7 @@
 export const quizData = {
   currentQuestionIndex: 0,
   // the questions in the quiz
-  currentScore:0,
+  currentScore: 0,
   questions: [
     {
       text: 'What are the different ways to declare a JS variable?',

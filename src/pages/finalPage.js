@@ -1,14 +1,13 @@
-
 import { USER_INTERFACE_ID, RESTART_QUIZ_BUTTON_ID } from '../constants.js';
 import { createFinalElement } from '../views/finalView.js';
 import { initQuestionPage } from './questionPage.js';
 import { quizData } from '../data.js';
 
-export const initFinalPage = (score,question) => {
+export const initFinalPage = (score, question) => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const finalElement = createFinalElement(score ,question);
+  const finalElement = createFinalElement(score, question);
   userInterface.appendChild(finalElement);
 
   document
@@ -17,8 +16,8 @@ export const initFinalPage = (score,question) => {
 };
 
 const restartQuiz = () => {
-  quizData.currentQuestionIndex = 0
+  quizData.currentQuestionIndex = 0;
   // the questions in the quiz
-  quizData.currentScore = 0
+  quizData.currentScore = 0;
   initQuestionPage();
 };
