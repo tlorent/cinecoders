@@ -11,50 +11,113 @@
 
 export const quizData = {
   currentQuestionIndex: 0,
+  currentScore: 0,
   // the questions in the quiz
   questions: [
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text:
+        'What is the name of the spaceship in Star Wars piloted by Han Solo?',
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
+        a: 'Star Destroyer',
+        b: 'Millennium Falcon',
+        c: 'X-Wing',
+        d: 'Solar Sailor',
       },
-      correct: 'c',
-      selected: null,
-      links: [
-        {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
-        },
-      ],
+      correctAnswerIndex: 1,
     },
     {
-      text: 'What does `typeof` do?',
+      text: 'Which of these actors below did not play Spider Man?',
       answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: 'Andrew Garfield',
+        b: 'Tom Holland',
+        c: 'Tobey Maguire',
+        d: 'Henry Cavill',
       },
-      correct: 'b',
-      selected: null,
-      links: [
-        {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
-        },
-      ],
+      correctAnswerIndex: 3,
     },
-    // Add more questions here
+    {
+      text:
+        'In the Harry Potter series, what house does Draco Malfoy belong to?',
+      answers: {
+        a: 'Slytherin',
+        b: 'Hufflepuff',
+        c: 'Gryffindor',
+        d: 'Ravenclaw',
+      },
+      correctAnswerIndex: 0,
+    },
+    {
+      text:
+        'Who directed movies like Royal Tenenbaums, Grand Budapest Hotel, and the Moonrise Kingdom?',
+      answers: {
+        a: 'Sofia Coppola',
+        b: 'Paul Thomas Anderson',
+        c: 'Wes Anderson',
+        d: 'Yorgos Lanthimos',
+      },
+      correctAnswerIndex: 2,
+    },
+    {
+      text: 'What was the first feature-length animated movie ever released?',
+      answers: {
+        a: 'Cinderella',
+        b: 'Snow White and the Seven Dwarfs',
+        c: 'Fantasia',
+        d: 'Pinocchio',
+      },
+      correctAnswerIndex: 1,
+    },
+    {
+      text:
+        'In The Shining, what is the name of the hotel where the story takes place?',
+      answers: {
+        a: 'The Overlook Hotel',
+        b: 'The Bates Motel',
+        c: 'The Hotel Cortez',
+        d: 'The Grand Budapest Hotel',
+      },
+      correctAnswerIndex: 0,
+    },
+    {
+      text:
+        'Which was the first anime to win the Academy Award for Best Animated Feature?',
+      answers: {
+        a: 'Akira',
+        b: 'Ghost in the Shell',
+        c: 'Grave of the Fireflies',
+        d: 'Spirited Away',
+      },
+      correctAnswerIndex: 3,
+    },
+    {
+      text: "Which of these directors has won the Palme d'Or twice?",
+      answers: {
+        a: 'Jane Campion',
+        b: 'Ken Loach',
+        c: 'Pedro Almodovar',
+        d: 'Ingmar Bergman',
+      },
+      correctAnswerIndex: 1,
+    },
+    {
+      text: 'Which film won the Academy Award for Best Picture in 1995?',
+      answers: {
+        a: 'Pulp Fiction',
+        b: 'The Shawshank Redemption',
+        c: 'Forrest Gump',
+        d: 'Four Weddings and a Funeral',
+      },
+      correctAnswerIndex: 2,
+    },
+    {
+      text: 'Which actress played the leading role in the film Amélie (2001)?',
+      answers: {
+        a: 'Audrey Tautou',
+        b: 'Marion Cotillard',
+        c: 'Irène Jacob',
+        d: 'Juliette Binoche',
+      },
+      correctAnswerIndex: 0,
+    },
   ],
 };
