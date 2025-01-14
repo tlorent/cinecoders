@@ -15,5 +15,12 @@ export const initWelcomePage = () => {
 };
 
 const startQuiz = () => {
-  initQuestionPage();
+  const username = document.getElementById('username').value;
+
+  if (username === '') {
+    alert('Please enter a name before starting the quiz');
+  } else {
+    localStorage.setItem('username', username);
+    initQuestionPage();
+  }
 };

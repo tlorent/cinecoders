@@ -13,31 +13,48 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue',
+    sans-serif;
 }
 
 h1 {
   font-size: 1.75rem;
 }
 
+label[for='username'] {
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#username {
+  width: 100%;
+  border: var(--default-border-style);
+  border-radius: var(--default-border-radius);
+  transition: var(--default-transition);
+  font-size: 1rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
 button {
   font-size: 1.125rem;
   font-weight: 600;
-	cursor: pointer;
+  cursor: pointer;
   outline: none;
   border: var(--default-border-style);
   border-radius: var(--default-border-radius);
   background-color: transparent;
-	padding: 0.8rem 1.25rem;
-	transition: var(--default-transition);
+  padding: 0.8rem 1.25rem;
+  transition: var(--default-transition);
 }
 
-button:hover{
+button:hover {
   background-color: var(--hover-color);
 }
 
 button:active {
-	scale: 0.995;
+  scale: 0.995;
 }
 
 .centered {
@@ -103,9 +120,15 @@ ul {
 }
 
 @keyframes correctAnswerScaleUp {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.015); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.015);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes fadeAndSlide {

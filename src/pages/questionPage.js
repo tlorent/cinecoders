@@ -15,7 +15,7 @@ export const initQuestionPage = () => {
 
   const questionElement = createQuestionElement(currentQuestion.text);
   questionElement.classList.add('animateWithFadeAndSlide');
-  
+
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
