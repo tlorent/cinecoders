@@ -11,3 +11,5 @@ export const ANSWERS_LIST_ID = 'answers-list';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const RESTART_QUIZ_BUTTON_ID = 'restart-button';
 export const TIMER_CONTAINER = 'timer-container';
+
+export const TIME_LEFT_IN_SEC = 300;
