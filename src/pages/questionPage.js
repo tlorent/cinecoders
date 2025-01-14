@@ -2,6 +2,7 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  TIME_LEFT_IN_SECONDS,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
@@ -16,8 +17,9 @@ export const initQuestionPage = () => {
 
   const timerElement = createTimerElement();
   userInterface.appendChild(timerElement);
-  let remainingTime = parseInt(sessionStorage.getItem('remainingTime'));
-  console.log(remainingTime);
+
+  let remainingTime = parseInt(localStorage.getItem('remainingTime'));
+
   const questionElement = createQuestionElement(currentQuestion.text);
   questionElement.classList.add('animateWithFadeAndSlide');
 
@@ -50,7 +52,6 @@ export const initQuestionPage = () => {
         .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     } else {
       clearInterval(interval);
-      sessionStorage.removeItem('remainingTime');
       timerElement.textContent = `Time\'s up!`;
     }
   }, 1000);

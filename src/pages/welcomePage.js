@@ -17,8 +17,7 @@ export const initWelcomePage = () => {
   startBtn.addEventListener('click', startQuiz);
 
   startBtn.addEventListener('click', () => {
-    sessionStorage.removeItem('remainingTime');
-    sessionStorage.setItem('remainingTime', TIME_LEFT_IN_SECONDS);
+    localStorage.setItem('remainingTime', TIME_LEFT_IN_SECONDS);
   });
 };
 
