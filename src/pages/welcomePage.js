@@ -1,7 +1,7 @@
 import {
   USER_INTERFACE_ID,
   START_QUIZ_BUTTON_ID,
-  uTIME_LEFT_IN_SEC,
+  TIME_LEFT_IN_SEC,
 } from '../constants.js';
 import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
