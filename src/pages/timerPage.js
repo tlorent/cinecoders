@@ -20,7 +20,7 @@ export const initTimer = () => {
   const updateTimerDisplay = (time) => {
     const minutes = String(Math.floor(time / MINUTES)).padStart(2, '0');
     const seconds = String(time % MINUTES).padStart(2, '0');
-    timerElement.textContent = `${minutes}:${seconds}`;
+    timerElement.textContent = `Time left: ${minutes}:${seconds}`;
   };
 
   updateTimerDisplay(window.remainingTime);
