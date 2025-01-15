@@ -1,5 +1,4 @@
-import { START_QUIZ_BUTTON_ID } from '../constants.js';
-
+import { SUBMIT_BUTTON } from '../constants.js';
 /**
  * Create the welcome screen
  * @returns {Element}
@@ -7,8 +6,16 @@ import { START_QUIZ_BUTTON_ID } from '../constants.js';
 export const createWelcomeElement = () => {
   const element = document.createElement('div');
   element.innerHTML = String.raw`
-    <h1>Welcome</h1>
-    <button id="${START_QUIZ_BUTTON_ID}">start quiz</button>
+    <h1>Welcome to the Quiz</h1>
+    <form id="welcomeForm">
+      <label for="username">Please enter your name:</label>
+      <input type="text" id="username" placeholder="Your Name" required />
+      <button type="submit" id="${SUBMIT_BUTTON}">Submit</button>
+    </form>
+    <div id="greetingSection" style="display: none;">
+      <p id="greetingMessage"></p>
+      <button id="startQuizButton" style="display: none;">Start Quiz</button>
+    </div>
   `;
   return element;
 };

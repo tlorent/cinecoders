@@ -14,3 +14,4 @@ export const TIMER_CONTAINER = 'timer-container';
 
 export const TIME_LEFT_IN_SEC = 300;
 export const MINUTES = 60;
+export const SUBMIT_BUTTON = 'submit-id';
