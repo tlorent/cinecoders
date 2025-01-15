@@ -126,6 +126,10 @@ ul {
   }
 }
 
-.timer {
+#timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rem;
   font-size: 2.5rem;
 }

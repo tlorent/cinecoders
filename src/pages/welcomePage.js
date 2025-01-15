@@ -5,7 +5,9 @@ import {
 } from '../constants.js';
 import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
-
+import { initTimer } from './timerPage.js';
+window.remainingTime = TIME_LEFT_IN_SEC;
+export let remainingTime;
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -16,12 +18,13 @@ export const initWelcomePage = () => {
   const startBtn = document.getElementById(START_QUIZ_BUTTON_ID);
 
   startBtn.addEventListener('click', startQuiz);
-
-  startBtn.addEventListener('click', () => {
-    localStorage.setItem('remainingTime', TIME_LEFT_IN_SEC);
-  });
 };
 
-const startQuiz = () => {
+export const startQuiz = () => {
   initQuestionPage();
+  window.remainingTime = TIME_LEFT_IN_SEC;
+
+  setTimeout(() => {
+    initTimer();
+  }, 100);
 };

@@ -13,3 +13,4 @@ export const RESTART_QUIZ_BUTTON_ID = 'restart-button';
 export const TIMER_CONTAINER = 'timer-container';
 
 export const TIME_LEFT_IN_SEC = 300;
+export const MINUTES = 60;
