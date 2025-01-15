@@ -125,3 +125,11 @@ ul {
     transform: translateX(0);
   }
 }
+
+#timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rem;
+  font-size: 2.5rem;
+}

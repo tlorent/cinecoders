@@ -1,7 +1,13 @@
-import { USER_INTERFACE_ID, START_QUIZ_BUTTON_ID } from '../constants.js';
+import {
+  USER_INTERFACE_ID,
+  START_QUIZ_BUTTON_ID,
+  TIME_LEFT_IN_SEC,
+} from '../constants.js';
 import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
-
+import { initTimer } from './timerPage.js';
+window.remainingTime = TIME_LEFT_IN_SEC;
+export let remainingTime;
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -9,11 +15,16 @@ export const initWelcomePage = () => {
   const welcomeElement = createWelcomeElement();
   userInterface.appendChild(welcomeElement);
 
-  document
-    .getElementById(START_QUIZ_BUTTON_ID)
-    .addEventListener('click', startQuiz);
+  const startBtn = document.getElementById(START_QUIZ_BUTTON_ID);
+
+  startBtn.addEventListener('click', startQuiz);
 };
 
-const startQuiz = () => {
+export const startQuiz = () => {
   initQuestionPage();
+  window.remainingTime = TIME_LEFT_IN_SEC;
+
+  setTimeout(() => {
+    initTimer();
+  }, 100);
 };
