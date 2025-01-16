@@ -1,4 +1,4 @@
-import { SUBMIT_BUTTON } from '../constants.js';
+import { SUBMIT_BUTTON, CHANGE_THEME_BUTTON_ID } from '../constants.js';
 /**
  * Create the welcome screen
  * @returns {Element}

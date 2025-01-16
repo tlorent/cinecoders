@@ -1,4 +1,7 @@
-import { RESTART_QUIZ_BUTTON_ID } from '../constants.js';
+import {
+  RESTART_QUIZ_BUTTON_ID,
+  CHANGE_THEME_BUTTON_ID,
+} from '../constants.js';
 
 /**
  * Create a full question element
