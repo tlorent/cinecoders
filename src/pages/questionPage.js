@@ -39,47 +39,26 @@ export const initQuestionPage = () => {
   const changeThemeButton = document.getElementById(CHANGE_THEME_BUTTON_ID);
   changeThemeButton.addEventListener('click', changeTheme);
 
-  // if(quizData.currentQuestionIndex === quizData.questions.length - 1) {
-  //   document
-  //     .getElementById(NEXT_QUESTION_BUTTON_ID)
-  //     .addEventListener('click', toFinalPage);
-  // } else {
-  //   document
-  //     .getElementById(NEXT_QUESTION_BUTTON_ID)
-  //     .addEventListener('click', nextQuestion);
-  // }
-  if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
-    document
-      .getElementById(NEXT_QUESTION_BUTTON_ID)
-      .addEventListener('click', () => {
-        clearInterval(window.timerInterval);
-        toFinalPage();
-      });
-  } else {
-    document
-      .getElementById(NEXT_QUESTION_BUTTON_ID)
-      .addEventListener('click', () => {
-        if (window.remainingTime === 0) {
-          clearInterval(window.timerInterval);
-          toFinalPage();
-        } else {
-          nextQuestion();
-        }
-      });
-  }
+  const checkForQuizFinish = () => {
+    const timeIsUp = window.remainingTime === 0;
+    const isLastQuestion =
+      quizData.currentQuestionIndex === quizData.questions.length - 1;
 
-  const timerCheckInterval = setInterval(() => {
-    if (window.remainingTime === 0) {
+    if (timeIsUp || isLastQuestion) {
       clearInterval(window.timerInterval);
-      clearInterval(timerCheckInterval);
       toFinalPage();
+      return true;
     }
-  }, 500);
-};
+    return false;
+  };
 
-const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-  initQuestionPage();
+  const nextButton = document.getElementById(NEXT_QUESTION_BUTTON_ID);
+  nextButton.addEventListener('click', () => {
+    if (!checkForQuizFinish()) {
+      quizData.currentQuestionIndex++;
+      initQuestionPage();
+    }
+  });
 };
 
 export const toFinalPage = () => {
