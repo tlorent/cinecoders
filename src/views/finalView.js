@@ -6,13 +6,15 @@ import { RESTART_QUIZ_BUTTON_ID } from '../constants.js';
  */
 export const createFinalElement = (score, question) => {
   const element = document.createElement('div');
+  let message = !window.remainingTime ? `Time's Up!` : '';
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-    <h1>You scored ${score} out of ${question}!</h1>
+    <h1>${message} 
+    ${localStorage.getItem('userName')} scored ${score} out of ${question}!</h1>
 
     <button id="${RESTART_QUIZ_BUTTON_ID}">
-     restart quiz
+     Restart Quiz
     </button>
   `;
 

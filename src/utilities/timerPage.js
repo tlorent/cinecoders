@@ -1,22 +1,21 @@
-import { toFinalPage } from './questionPage.js';
-import { TIMER_CONTAINER, MINUTES, TIME_LEFT_IN_SEC } from '../constants.js';
+import { MINUTES, TIME_LEFT_IN_SEC } from '../constants.js';
 import { createTimerElement } from '../views/timerView.js';
 
 export let timerInterval;
 export const initTimer = () => {
-  if (window.timerInterval) {
+
+  if (window.timerElement) {
     clearInterval(window.timerInterval);
   }
-
+  const timerContainer = document.getElementById("timer-container");
   const timerElement = createTimerElement();
-  const timerContainer = document.getElementById(TIMER_CONTAINER);
   timerContainer.innerHTML = '';
-  timerContainer.appendChild(timerElement);
+  timerElement.innerHTML = '';
 
   if (window.remainingTime === undefined) {
     window.remainingTime = TIME_LEFT_IN_SEC;
   }
-
+  timerContainer.appendChild(timerElement);
   const updateTimerDisplay = (time) => {
     const minutes = String(Math.floor(time / MINUTES)).padStart(2, '0');
     const seconds = String(time % MINUTES).padStart(2, '0');
@@ -32,5 +31,8 @@ export const initTimer = () => {
     } else {
       clearInterval(window.timerInterval);
     }
-  }, 1000);
+  }, 10);
+
+  
+
 };

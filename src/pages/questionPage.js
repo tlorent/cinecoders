@@ -5,19 +5,15 @@ import {
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
-import { createTimerElement } from '../views/timerView.js';
 import { quizData } from '../data.js';
 import { initFinalPage } from './finalPage.js';
-import { timerInterval } from './timerPage.js';
+import { remainingTime } from './welcomePage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  const timerElement = createTimerElement();
-  userInterface.appendChild(timerElement);
-
   const questionElement = createQuestionElement(currentQuestion.text);
   questionElement.classList.add('animateWithFadeAndSlide');
   userInterface.appendChild(questionElement);
@@ -30,19 +26,11 @@ export const initQuestionPage = () => {
       index,
       currentQuestion.correctAnswerIndex
     );
+
     answersListElement.appendChild(answerElement);
     answersListElement.classList.add('animateWithFadeAndSlide');
   });
 
-  // if(quizData.currentQuestionIndex === quizData.questions.length - 1) {
-  //   document
-  //     .getElementById(NEXT_QUESTION_BUTTON_ID)
-  //     .addEventListener('click', toFinalPage);
-  // } else {
-  //   document
-  //     .getElementById(NEXT_QUESTION_BUTTON_ID)
-  //     .addEventListener('click', nextQuestion);
-  // }
   if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
     document
       .getElementById(NEXT_QUESTION_BUTTON_ID)
@@ -78,6 +66,5 @@ const nextQuestion = () => {
 };
 
 export const toFinalPage = () => {
-  const score = initFinalPage(quizData.currentScore, quizData.questions.length);
-  document.getElementById(USER_INTERFACE_ID).appendChild(score);
+  initFinalPage(quizData.currentScore, quizData.questions.length);
 };

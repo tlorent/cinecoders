@@ -12,5 +12,8 @@ export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const RESTART_QUIZ_BUTTON_ID = 'restart-button';
 export const TIMER_CONTAINER = 'timer-container';
 
+export const PARAGRAPH_ID = 'welcome-paragraph'; 
+export const GREET_DIV_ID = 'greet-div-id';
+export const INPUT_FIELD_ID = 'username';
 export const TIME_LEFT_IN_SEC = 300;
 export const MINUTES = 60;
