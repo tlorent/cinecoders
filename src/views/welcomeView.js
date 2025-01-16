@@ -2,7 +2,7 @@ import {
   START_QUIZ_BUTTON_ID,
   PARAGRAPH_ID,
   GREET_DIV_ID,
-  INPUT_FIELD_ID,
+  INPUT_FIELD_ID,INPUT_FIELD_CLASS,
 } from '../constants.js';
 
 /**
@@ -21,12 +21,14 @@ export const createWelcomeElement = () => {
   greetingElement.id = GREET_DIV_ID;
   greetingElement.innerHTML = String.raw`
       <h1>Welcome to Our Movie Quiz</h1>
-      <p id="${PARAGRAPH_ID}">You've 5 minutes to test your movie skills!</p>
+      <p id="${PARAGRAPH_ID}">You've <span class="minutes">5</span> minutes to test your movie skills!</p>
+      <div class="welcome">
     <form id="welcome-from">
-      <label for="username">Please enter your name:</label>
-      <input type="text" id="${INPUT_FIELD_ID}" placeholder="Your Name"  required/>
+
+      <input type="text" id="${INPUT_FIELD_ID}" class="${INPUT_FIELD_CLASS}" placeholder="Enter Your Name"  required/>
       <button type="submit" id="${START_QUIZ_BUTTON_ID}">Start Quiz</button>
     </form>
+    </div>
   `;
   return greetingElement;
 };

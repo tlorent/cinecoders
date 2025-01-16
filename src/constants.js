@@ -15,5 +15,6 @@ export const TIMER_CONTAINER = 'timer-container';
 export const PARAGRAPH_ID = 'welcome-paragraph'; 
 export const GREET_DIV_ID = 'greet-div-id';
 export const INPUT_FIELD_ID = 'username';
+export const INPUT_FIELD_CLASS = 'input-data';
 export const TIME_LEFT_IN_SEC = 300;
 export const MINUTES = 60;
