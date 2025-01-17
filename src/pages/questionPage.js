@@ -7,7 +7,7 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { initFinalPage } from './finalPage.js';
-import { remainingTime } from './welcomePage.js';
+
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -30,36 +30,27 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
     answersListElement.classList.add('animateWithFadeAndSlide');
   });
+  
 
   if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
     document
       .getElementById(NEXT_QUESTION_BUTTON_ID)
-      .addEventListener('click', () => {
-        clearInterval(window.timerInterval);
-        toFinalPage();
-      });
+      .addEventListener('click', toFinalPage);
   } else {
     document
       .getElementById(NEXT_QUESTION_BUTTON_ID)
-      .addEventListener('click', () => {
-        if (window.remainingTime === 0) {
-          clearInterval(window.timerInterval);
-          toFinalPage();
-        } else {
-          nextQuestion();
-        }
-      });
+      .addEventListener('click', nextQuestion);
   }
 
-  const timerCheckInterval = setInterval(() => {
-    if (window.remainingTime === 0) {
-      clearInterval(window.timerInterval);
-      clearInterval(timerCheckInterval);
-      toFinalPage();
-    }
-  }, 500);
-};
 
+};
+export const quizFinished = ()=>{
+  if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
+    return true
+  }else{
+    return false;
+  }
+}
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   initQuestionPage();

@@ -34,6 +34,9 @@ export const initWelcomePage = () => {
 };
 
 export const startQuiz = () => {
+
+  const timerElement = document.querySelector('.timer');
+  if(timerElement) timerElement.remove();
   initQuestionPage();
   window.remainingTime = TIME_LEFT_IN_SEC;
 

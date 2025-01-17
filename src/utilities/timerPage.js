@@ -1,22 +1,16 @@
-import { MINUTES, TIME_LEFT_IN_SEC } from '../constants.js';
-import { remainingTime } from '../pages/welcomePage.js';
-import { createTimerElement } from '../views/timerView.js';
+import { MINUTES, TIME_LEFT_IN_SEC,REMAINDER, INTERVAL, PLAY_AUDIO_INTERVAL } from '../constants.js';
 
-export let timerInterval;
+import { createTimerElement, createAudioElement } from '../views/timerView.js';
+import { quizFinished, toFinalPage } from '../pages/questionPage.js';
+
 export const initTimer = () => {
-
-  if (window.timerElement) {
-    clearInterval(window.timerInterval);
-  }
-  const timerContainer = document.getElementById("timer-container");
   const timerElement = createTimerElement();
-  timerContainer.innerHTML = '';
   timerElement.innerHTML = '';
-
   if (window.remainingTime === undefined) {
     window.remainingTime = TIME_LEFT_IN_SEC;
   }
-  timerContainer.appendChild(timerElement);
+
+  document.body.children[1].insertAdjacentElement('afterend', timerElement);
   const updateTimerDisplay = (time) => {
     const minutes = String(Math.floor(time / MINUTES)).padStart(2, '0');
     const seconds = String(time % MINUTES).padStart(2, '0');
@@ -26,20 +20,28 @@ export const initTimer = () => {
   updateTimerDisplay(window.remainingTime);
 
   window.timerInterval = setInterval(() => {
+    if(quizFinished()){
+      
+      clearInterval(window.timerInterval);
+      timerElement.classList.remove("warning");
+    }
     if (window.remainingTime > 0) {
       window.remainingTime--;
-      if (window.remainingTime === 30) {
+      if (window.remainingTime === REMAINDER) {
         timerElement.classList.add("warning");
+        const audio = createAudioElement();
+        audio.play();
+        setTimeout(()=>{
+          audio.pause();
+          timerElement.classList.remove("warning");
+        }, PLAY_AUDIO_INTERVAL)
       }else if (window.remainingTime === 0){
         timerElement.classList.remove("warning");
       }
       updateTimerDisplay(window.remainingTime);
     } else {
-      
+      toFinalPage();
       clearInterval(window.timerInterval);
     }
-  }, 1000);
-
-  
-
+  }, INTERVAL);
 };

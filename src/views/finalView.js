@@ -10,8 +10,8 @@ export const createFinalElement = (score, question) => {
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-    <h1>${message} 
-    ${localStorage.getItem('userName')} scored ${score} out of ${question}!</h1>
+    <h1>${message}
+    ${localStorage.getItem('userName')}. You scored ${score} out of ${question}!</h1>
 
     <button id="${RESTART_QUIZ_BUTTON_ID}">
      Restart Quiz
