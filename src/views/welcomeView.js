@@ -2,7 +2,8 @@ import {
   START_QUIZ_BUTTON_ID,
   PARAGRAPH_ID,
   GREET_DIV_ID,
-  INPUT_FIELD_ID,INPUT_FIELD_CLASS,
+  INPUT_FIELD_ID,
+  INPUT_FIELD_CLASS,
 } from '../constants.js';
 
 /**

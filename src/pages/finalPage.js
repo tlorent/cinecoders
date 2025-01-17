@@ -1,8 +1,4 @@
-import {
-  USER_INTERFACE_ID,
-  RESTART_QUIZ_BUTTON_ID,
-
-} from '../constants.js';
+import { USER_INTERFACE_ID, RESTART_QUIZ_BUTTON_ID } from '../constants.js';
 import { createFinalElement } from '../views/finalView.js';
 
 import { quizData } from '../data.js';

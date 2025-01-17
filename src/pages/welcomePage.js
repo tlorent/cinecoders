@@ -5,14 +5,12 @@ import {
 } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 import { initTimer } from '../utilities/timerPage.js';
-window.remainingTime = TIME_LEFT_IN_SEC;
 
-export let remainingTime;
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const  welcomeElement =  createWelcomeElement();
+  const welcomeElement = createWelcomeElement();
   userInterface.appendChild(welcomeElement);
 
   const welcomeForm = document.getElementById('welcome-from');
@@ -20,11 +18,7 @@ export const initWelcomePage = () => {
   welcomeElement.children[0].insertAdjacentElement('afterend', lineElement);
 
   welcomeForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const userNameInput = document.getElementById('username');
-    const userName = userNameInput.value.trim();
-
+    const userName = document.getElementById('username').value.trim();
     localStorage.setItem('userName', userName);
     initQuestionPage();
     setTimeout(() => {
@@ -34,12 +28,11 @@ export const initWelcomePage = () => {
 };
 
 export const startQuiz = () => {
-
   const timerElement = document.querySelector('.timer');
-  if(timerElement) timerElement.remove();
-  initQuestionPage();
-  window.remainingTime = TIME_LEFT_IN_SEC;
+  if (timerElement) timerElement.remove();
 
+  window.remainingTime = TIME_LEFT_IN_SEC;
+  initQuestionPage();
   setTimeout(() => {
     initTimer();
   }, 100);

@@ -1,16 +1,31 @@
-import { MINUTES, TIME_LEFT_IN_SEC,REMAINDER, INTERVAL, PLAY_AUDIO_INTERVAL } from '../constants.js';
+import {
+  MINUTES,
+  TIME_LEFT_IN_SEC,
+  REMAINDER,
+  INTERVAL,
+  PLAY_AUDIO_INTERVAL,
+  CHANGE_THEME_BUTTON_ID,
+} from '../constants.js';
 
 import { createTimerElement, createAudioElement } from '../views/timerView.js';
 import { quizFinished, toFinalPage } from '../pages/questionPage.js';
 
 export const initTimer = () => {
+  const wrapper = document.querySelector('.wrapper');
   const timerElement = createTimerElement();
   timerElement.innerHTML = '';
+
   if (window.remainingTime === undefined) {
     window.remainingTime = TIME_LEFT_IN_SEC;
   }
 
-  document.body.children[1].insertAdjacentElement('afterend', timerElement);
+  const toggleButton = document.getElementById(CHANGE_THEME_BUTTON_ID);
+  if (toggleButton) {
+    toggleButton.insertAdjacentElement('afterend', timerElement);
+  } else {
+    wrapper.appendChild(timerElement);
+  }
+
   const updateTimerDisplay = (time) => {
     const minutes = String(Math.floor(time / MINUTES)).padStart(2, '0');
     const seconds = String(time % MINUTES).padStart(2, '0');
@@ -20,23 +35,22 @@ export const initTimer = () => {
   updateTimerDisplay(window.remainingTime);
 
   window.timerInterval = setInterval(() => {
-    if(quizFinished()){
-      
+    if (quizFinished()) {
       clearInterval(window.timerInterval);
-      timerElement.classList.remove("warning");
+      timerElement.classList.remove('warning');
     }
     if (window.remainingTime > 0) {
       window.remainingTime--;
       if (window.remainingTime === REMAINDER) {
-        timerElement.classList.add("warning");
+        timerElement.classList.add('warning');
         const audio = createAudioElement();
         audio.play();
-        setTimeout(()=>{
+        setTimeout(() => {
           audio.pause();
-          timerElement.classList.remove("warning");
-        }, PLAY_AUDIO_INTERVAL)
-      }else if (window.remainingTime === 0){
-        timerElement.classList.remove("warning");
+          timerElement.classList.remove('warning');
+        }, PLAY_AUDIO_INTERVAL);
+      } else if (window.remainingTime === 0) {
+        timerElement.classList.remove('warning');
       }
       updateTimerDisplay(window.remainingTime);
     } else {
