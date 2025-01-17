@@ -67,6 +67,7 @@ h1 {
   margin-bottom: 1rem;
   color: var(--primary-color);
   letter-spacing: 2px;
+  margin-top: 1rem;
 }
 
 label[for='username'] {
@@ -140,6 +141,7 @@ ul {
   transition: var(--default-transition);
   letter-spacing: 2px;
   font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
 .answer-option:hover {
@@ -173,6 +175,7 @@ ul {
 
 .animateWithFadeAndSlide {
   animation: fadeAndSlide 0.4s ease;
+  margin-top: 1rem;
 }
 
 @keyframes correctAnswerScaleUp {
@@ -252,6 +255,17 @@ ul {
   100% {
     transform: translateX(0);
   }
+}
+
+.question-indicator {
+  height: 60px;
+  width: 60px;
+  background-color: #ee7e89;
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
 }
 
 .welcome {

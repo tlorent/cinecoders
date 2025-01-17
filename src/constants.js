@@ -21,7 +21,7 @@ export const MINUTES = 60;
 export const REMAINDER = 25;
 export const PLAY_AUDIO_INTERVAL = 5000;
 export const INTERVAL = 1000;
-export const QUIZ_FINISHED = false;
+
 export const AUDIO_ELEMENT_ID = 'play';
 export const CHANGE_THEME_BUTTON_ID = 'change-theme-button';
 export const WRAPPER_CLASS = 'wrapper';
