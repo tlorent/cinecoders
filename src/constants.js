@@ -10,9 +10,18 @@ export const START_QUIZ_BUTTON_ID = 'start-quiz-button';
 export const ANSWERS_LIST_ID = 'answers-list';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const RESTART_QUIZ_BUTTON_ID = 'restart-button';
-export const CHANGE_THEME_BUTTON_ID = 'change-theme-button';
-
 export const TIMER_CONTAINER = 'timer-container';
-export const TIME_LEFT_IN_SEC = 300;
+
+export const PARAGRAPH_ID = 'welcome-paragraph';
+export const GREET_DIV_ID = 'greet-div-id';
+export const INPUT_FIELD_ID = 'username';
+export const INPUT_FIELD_CLASS = 'input-data';
+export const TIME_LEFT_IN_SEC = 60;
 export const MINUTES = 60;
-export const SUBMIT_BUTTON = 'submit-id';
+export const REMAINDER = 25;
+export const PLAY_AUDIO_INTERVAL = 5000;
+export const INTERVAL = 1000;
+
+export const AUDIO_ELEMENT_ID = 'play';
+export const CHANGE_THEME_BUTTON_ID = 'change-theme-button';
+export const WRAPPER_CLASS = 'wrapper';

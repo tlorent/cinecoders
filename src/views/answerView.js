@@ -4,6 +4,7 @@
  */
 
 import { quizData } from '../data.js';
+
 export const createAnswerElement = (answerText, answerIndex, correctIndex) => {
   const answerOptionEl = document.createElement('li');
   answerOptionEl.classList.add('answer-option');
