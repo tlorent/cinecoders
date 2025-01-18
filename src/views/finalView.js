@@ -14,7 +14,7 @@ export const createFinalElement = (score, question) => {
     ${localStorage.getItem(
       'userName'
     )}. You scored ${score} out of ${question}!</h1>
-
+    <div id="result-container"></div>
     <button id="${RESTART_QUIZ_BUTTON_ID}">
      Restart Quiz
     </button>
