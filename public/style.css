@@ -7,6 +7,8 @@
 }
 
 :root {
+  --quiz-window-bg-color: rgba(255, 255, 255, 0.8);
+
   --correct-answer-bg-color: rgba(149, 211, 149, 0.65);
   --correct-answer-border-color: rgb(24, 122, 15);
 
@@ -24,18 +26,34 @@
 }
 
 .dark-mode {
+  --quiz-window-bg-color: rgba(22, 21, 21, 0.8);
   --background-color: rgb(26, 24, 24);
   --text-color: rgb(232, 232, 232);
-
-  --correct-answer-bg-color: rgba(81, 116, 81, 0.65);
-
-  --incorrect-answer-bg-color: rgb(118, 59, 59);
-
-  --default-border-style: 1px solid #b7b7b797;
 }
 
-body.with-bg {
-  background-color: #b7b7b7;
+body.dark-mode {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.9)
+  ),
+  url('./movie-bg.jpg');
+  background-blend-mode: multiply;
+}
+
+.dark-mode #welcome-paragraph {
+  color: var(--text-color);
+}
+
+.dark-mode #username {
+  background-color: rgb(37, 37, 37);
+}
+
+/* DARK MODE STYLES */
+
+#user-interface {
+  order: 1;
+  background-color: var(--quiz-window-bg-color);
+  transition: var(--default-transition);
 }
 
 body {
@@ -54,6 +72,7 @@ body {
   background-blend-mode: overlay;
   height: 100vh;
   width: 100vw;
+  transition: var(--default-transition);
 }
 
 .wrapper {
@@ -62,6 +81,20 @@ body {
   align-items: center;
   justify-content: center;
   max-width: 700px;
+  gap: 1rem;
+  padding-inline: 40px;
+}
+
+.theme-changer {
+  order: -1; /* Всегда будет первым элементом */
+}
+
+.timer {
+  order: 0;
+}
+
+.quiz {
+  order: 1;
 }
 
 h1 {
@@ -100,8 +133,6 @@ button {
 }
 
 button:hover {
-  /* background-color: var(--hover-color);
-   */
   background-color: var(--btn-hover-color);
 }
 
@@ -112,10 +143,8 @@ button:active {
 .centered {
   text-align: center;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem 2rem;
   border-radius: 1.5rem;
-  margin: 2rem;
   backdrop-filter: (100px);
 }
 
@@ -142,6 +171,7 @@ ul {
   border: var(--default-border-style);
   border-radius: var(--default-border-radius);
   transition: var(--default-transition);
+  color: var(--text-color);
   letter-spacing: 2px;
   font-size: 1.2rem;
   margin-top: 1rem;
@@ -150,7 +180,6 @@ ul {
 .answer-option:hover {
   background-color: var(--hover-color);
   font-size: 1.25rem;
-  color: #fff;
 }
 
 .correct-answer {
@@ -263,7 +292,7 @@ ul {
 .question-indicator {
   height: 60px;
   width: 60px;
-  background-color: #ee7e89;
+  background-color: var(--primary-color);
   color: #fff;
   font-size: 1.25rem;
   padding: 0.3rem;
@@ -271,9 +300,6 @@ ul {
   margin-bottom: 2rem;
 }
 
-.welcome {
-  position: relative;
-}
 
 .welcome form {
   margin-top: 1rem;
@@ -319,7 +345,7 @@ input {
 input[type='text'] {
   width: 100%;
   text-align: center;
-  color: #f55d6c;
+  color: var(--primary-color);
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -341,6 +367,7 @@ input[type='text'] {
 }
 
 #change-theme-button {
+  order: -1;
   font-size: 1rem;
   width: 3rem;
   height: 3rem;
