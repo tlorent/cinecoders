@@ -9,13 +9,6 @@ import {
  * Create the welcome screen
  * @returns {Element}
  */
-
-export const createLineElement = () => {
-  const lineElement = document.createElement('div');
-  lineElement.classList.add('line');
-  return lineElement;
-};
-
 export const createWelcomeElement = () => {
   const greetingElement = document.createElement('div');
   greetingElement.id = GREET_DIV_ID;
