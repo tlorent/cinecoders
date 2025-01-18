@@ -11,6 +11,7 @@ import { initTimer } from '../utilities/timerPage.js';
 
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
+  userInterface.classList.add('loaded');
   userInterface.innerHTML = '';
 
   const welcomeElement = createWelcomeElement();
@@ -25,7 +26,7 @@ export const initWelcomePage = () => {
     initQuestionPage();
     setTimeout(() => {
       initTimer();
-    }, 100);
+    }, 0);
   });
 };
 
@@ -37,5 +38,5 @@ export const startQuiz = () => {
   initQuestionPage();
   setTimeout(() => {
     initTimer();
-  }, 100);
+  }, 0);
 };

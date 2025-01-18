@@ -411,3 +411,21 @@ input[type='text'] {
     grid-column: 1;
   }
 }
+
+@keyframes hide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#user-interface.loaded {
+  opacity: 1;
+  transition: opacity 0.03s ease;
+}
