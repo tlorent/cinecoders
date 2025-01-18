@@ -152,6 +152,12 @@ button:active {
 
 .centered {
   text-align: center;
+  display: flex;
+  padding: 2rem 2rem;
+  border-radius: 1.5rem;
+  margin: 1rem;
+  backdrop-filter: blur(100px);
+  width: 70%;
   
 }
 
@@ -220,11 +226,7 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  padding: 2rem 2rem;
-  border-radius: 1.5rem;
-  margin: 1rem;
-  backdrop-filter: blur(100px);
-  width: 70%;
+
 }
 
 @keyframes correctAnswerScaleUp {
@@ -391,12 +393,6 @@ input[type='text'] {
 
 #greet-div-id {
   width: 100%;
-  display: flex;
-  padding: 2rem 2rem;
-  border-radius: 1.5rem;
-  margin: 1rem;
-  backdrop-filter: blur(100px);
-  width: 70%;
 }
 
 @media screen and (max-width: 1000px) {
