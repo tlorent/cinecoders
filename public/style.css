@@ -31,6 +31,10 @@
   --text-color: rgb(232, 232, 232);
 }
 
+.dark-mode h1{
+  color: #fff;
+}
+
 body.dark-mode {
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.8),
