@@ -3,8 +3,7 @@ import {
   TIME_LEFT_IN_SEC,
   REMAINDER,
   INTERVAL,
-  PLAY_AUDIO_INTERVAL,
-  CHANGE_THEME_BUTTON_ID,
+  PLAY_AUDIO_INTERVAL
 } from '../constants.js';
 
 import { createTimerElement, createAudioElement } from '../views/timerView.js';
@@ -13,17 +12,12 @@ import { quizFinished, toFinalPage } from '../pages/questionPage.js';
 export const initTimer = () => {
   const wrapper = document.querySelector('.wrapper');
   const timerElement = createTimerElement();
+  wrapper.prepend(timerElement);
+  
   timerElement.innerHTML = '';
 
   if (window.remainingTime === undefined) {
     window.remainingTime = TIME_LEFT_IN_SEC;
-  }
-
-  const toggleButton = document.getElementById(CHANGE_THEME_BUTTON_ID);
-  if (toggleButton) {
-    toggleButton.insertAdjacentElement('afterend', timerElement);
-  } else {
-    wrapper.appendChild(timerElement);
   }
 
   const updateTimerDisplay = (time) => {
