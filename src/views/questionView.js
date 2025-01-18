@@ -7,10 +7,6 @@ import { quizData } from '../data.js';
  */
 export const createQuestionElement = (question) => {
   const element = document.createElement('div');
-  const questionNum = createSpanElement();
-  questionNum.textContent = `${quizData.currentQuestionIndex + 1}/ ${
-    quizData.questions.length
-  }`;
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
@@ -28,11 +24,4 @@ export const createQuestionElement = (question) => {
   `;
 
   return element;
-};
-
-export const createSpanElement = () => {
-  const spanElement = document.createElement('span');
-  spanElement.classList.add('page');
-
-  return spanElement;
 };

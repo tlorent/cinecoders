@@ -5,7 +5,6 @@ import {
 } from '../constants.js';
 import {
   createQuestionElement,
-  createSpanElement,
 } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
