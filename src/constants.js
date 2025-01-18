@@ -24,5 +24,6 @@ export const INTERVAL = 1000;
 
 export const AUDIO_ELEMENT_ID = 'play';
 export const CHANGE_THEME_BUTTON_ID = 'change-theme-button';
-export const WRAPPER_CLASS = 'wrapper';
+export const WRAPPER_CLASS = '.wrapper';
 export const FINAL_MSG_ID = 'final-msg';
+
