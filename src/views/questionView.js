@@ -17,7 +17,7 @@ export const createQuestionElement = (question) => {
   <span class="question-indicator"> Question ${
     quizData.currentQuestionIndex + 1
   } </span> 
-    <h1> ${question}</h1>
+    <h1 class="question-heading"> ${question}</h1>
 
     <ul id="${ANSWERS_LIST_ID}">
     </ul>

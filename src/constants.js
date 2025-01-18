@@ -14,9 +14,9 @@ export const TIMER_CONTAINER = 'timer-container';
 
 export const PARAGRAPH_ID = 'welcome-paragraph';
 export const GREET_DIV_ID = 'greet-div-id';
-export const INPUT_FIELD_ID = 'username';
-export const INPUT_FIELD_CLASS = 'input-data';
-export const TIME_LEFT_IN_SEC = 60;
+export const INPUT_FIELD_ID = 'input-data';
+
+export const TIME_LEFT_IN_SEC = 300;
 export const MINUTES = 60;
 export const REMAINDER = 25;
 export const PLAY_AUDIO_INTERVAL = 5000;
@@ -25,3 +25,5 @@ export const INTERVAL = 1000;
 export const AUDIO_ELEMENT_ID = 'play';
 export const CHANGE_THEME_BUTTON_ID = 'change-theme-button';
 export const WRAPPER_CLASS = '.wrapper';
+export const FINAL_MSG_ID = 'final-msg';
+

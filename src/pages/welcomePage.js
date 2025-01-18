@@ -1,4 +1,8 @@
-import { USER_INTERFACE_ID, TIME_LEFT_IN_SEC } from '../constants.js';
+import {
+  USER_INTERFACE_ID,
+  TIME_LEFT_IN_SEC,
+  INPUT_FIELD_ID,
+} from '../constants.js';
 import {
   createWelcomeElement,
   createLineElement,
@@ -18,7 +22,8 @@ export const initWelcomePage = () => {
   welcomeElement.children[0].insertAdjacentElement('afterend', lineElement);
 
   welcomeForm.addEventListener('submit', (e) => {
-    const userName = document.getElementById('username').value.trim();
+    e.preventDefault();
+    const userName = document.getElementById(INPUT_FIELD_ID).value.trim();
     localStorage.setItem('userName', userName);
     initQuestionPage();
     setTimeout(() => {
