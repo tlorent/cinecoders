@@ -4,8 +4,7 @@ import {
   INPUT_FIELD_ID,
 } from '../constants.js';
 import {
-  createWelcomeElement,
-  createLineElement,
+  createWelcomeElement
 } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 import { initTimer } from '../utilities/timerPage.js';
@@ -18,8 +17,6 @@ export const initWelcomePage = () => {
   userInterface.appendChild(welcomeElement);
 
   const welcomeForm = document.getElementById('welcome-from');
-  const lineElement = createLineElement();
-  welcomeElement.children[0].insertAdjacentElement('afterend', lineElement);
 
   welcomeForm.addEventListener('submit', (e) => {
     e.preventDefault();
