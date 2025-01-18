@@ -44,8 +44,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   background-image: linear-gradient(
-      rgba(12, 40, 67, 0.867),
+      rgba(11, 39, 65, 0.867),
       rgba(12, 40, 67, 0.867)
     ),
     url('./movie-bg.jpg');
@@ -54,20 +55,29 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 700px;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
+  font-size: 1.75rem;
+  margin: 0.5rem;
   letter-spacing: 2px;
+}
+
+.question-heading {
+  color: var(--primary-color);
   margin-top: 1rem;
+  grid-column: 1;
+  color: var(--text-color);
+}
+
+.final-msg {
+  margin-bottom: 1rem;
 }
 
 label[for='username'] {
@@ -76,13 +86,8 @@ label[for='username'] {
   margin-bottom: 0.5rem;
 }
 
-#username::placeholder {
-  font-size: 1rem;
-}
-
 button {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
   outline: none;
   border: var(--default-border-style);
@@ -93,12 +98,12 @@ button {
   color: #fff;
   display: block;
   width: 100%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   letter-spacing: 2px;
+  grid-column: 1 / -1;
 }
 button:hover {
-  /* background-color: var(--hover-color);
-   */
   background-color: var(--btn-hover-color);
 }
 
@@ -112,8 +117,9 @@ button:active {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem 2rem;
   border-radius: 1.5rem;
-  margin: 2rem;
+  margin: 1rem;
   backdrop-filter: (100px);
+  width: 70%;
 }
 
 .scrollable {
@@ -124,29 +130,29 @@ button:active {
 
 ul {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
   justify-content: start;
   margin-bottom: 1rem;
+  grid-column: 2;
 }
 
 .answer-option {
-  text-align: start;
+  text-align: center;
   font-weight: 550;
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.5rem;
   border: var(--default-border-style);
   border-radius: var(--default-border-radius);
   transition: var(--default-transition);
-  letter-spacing: 2px;
   font-size: 1.2rem;
-  margin-top: 1rem;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .answer-option:hover {
   background-color: var(--hover-color);
-  font-size: 1.25rem;
   color: #fff;
 }
 
@@ -175,7 +181,9 @@ ul {
 
 .animateWithFadeAndSlide {
   animation: fadeAndSlide 0.4s ease;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
 }
 
 @keyframes correctAnswerScaleUp {
@@ -258,48 +266,49 @@ ul {
 }
 
 .question-indicator {
-  height: 60px;
-  width: 60px;
-  background-color: #ee7e89;
+  background-color: black;
   color: #fff;
   font-size: 1.25rem;
   padding: 0.3rem;
   border-radius: 5px;
-  margin-bottom: 2rem;
-}
-
-.welcome {
-  position: relative;
+  margin-bottom: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  grid-column: 1 / -1;
 }
 
 .welcome form {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  position: relative;
+  gap: 1rem;
+
   margin-top: 1rem;
 }
 .welcome input {
   height: 100%;
   width: 100%;
   border: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #f55d6c;
   border-bottom: 3px solid var(--primary-color);
   border-radius: 0.3rem;
   padding: 0.5rem 0rem;
 }
+
 input:focus {
   outline: none;
   border-color: transparent;
   border-bottom: 3px solid var(--primary-color);
 }
 
-.minutes {
+.highlight {
   color: var(--primary-color);
-  font-size: 1.22;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -307,14 +316,15 @@ input {
   width: 100%;
   height: 100%;
   padding: 0.65rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   border: none;
 }
+
 input[type='text'] {
   width: 100%;
   text-align: center;
   color: #f55d6c;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -331,10 +341,25 @@ input[type='text'] {
   background-color: var(--btn-hover-color);
 }
 
-/* @media screen and (max-width: 500px) {
-  .timer {
-    font-size: 2rem;
-    padding: 0.3rem 0.8rem;
-    border-radius: 0.6rem;
-  } */
-/* } */
+#greet-div-id {
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .animateWithFadeAndSlide {
+    grid-template-columns: 1fr;
+  }
+
+  ul {
+    grid-column: 1;
+  }
+  .answer-option {
+    padding: 1rem;
+  }
+  button {
+    grid-column: 1;
+  }
+  .question-indicator {
+    grid-column: 1;
+  }
+}
