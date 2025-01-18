@@ -2,10 +2,9 @@ import {
   USER_INTERFACE_ID,
   TIME_LEFT_IN_SEC,
   INPUT_FIELD_ID,
+  WELCOME_FORM,
 } from '../constants.js';
-import {
-  createWelcomeElement
-} from '../views/welcomeView.js';
+import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 import { initTimer } from '../utilities/timerPage.js';
 
@@ -17,7 +16,7 @@ export const initWelcomePage = () => {
   const welcomeElement = createWelcomeElement();
   userInterface.appendChild(welcomeElement);
 
-  const welcomeForm = document.getElementById('welcome-from');
+  const welcomeForm = document.getElementById(WELCOME_FORM);
 
   welcomeForm.addEventListener('submit', (e) => {
     e.preventDefault();

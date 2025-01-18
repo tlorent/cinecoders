@@ -33,11 +33,11 @@ const showGif = (score) => {
   gifElement.src = gifUrl;
   gifElement.alt = 'Quiz result gif';
   gifElement.classList.add('result-gif');
-  
+
   const resultContainer = document.getElementById('result-container');
   resultContainer.innerHTML = '';
   resultContainer.appendChild(gifElement);
-}
+};
 
 const restartQuiz = () => {
   quizData.currentQuestionIndex = 0;

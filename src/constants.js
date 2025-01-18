@@ -13,7 +13,7 @@ export const RESTART_QUIZ_BUTTON_ID = 'restart-button';
 export const TIMER_CONTAINER = 'timer-container';
 
 export const PARAGRAPH_ID = 'welcome-paragraph';
-export const GREET_DIV_ID = 'greet-div-id';
+export const WELCOME_DIV_ID = 'welcome-container';
 export const INPUT_FIELD_ID = 'input-data';
 
 export const TIME_LEFT_IN_SEC = 300;
@@ -26,4 +26,5 @@ export const AUDIO_ELEMENT_ID = 'play';
 export const CHANGE_THEME_BUTTON_ID = 'change-theme-button';
 export const WRAPPER_CLASS = '.wrapper';
 export const FINAL_MSG_ID = 'final-msg';
-
+export const WELCOME_FORM = 'welcome-form';
+export const GRID_CONTAINER_ID = 'grid-container';
