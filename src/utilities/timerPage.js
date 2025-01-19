@@ -3,7 +3,7 @@ import {
   TIME_LEFT_IN_SEC,
   REMAINDER,
   INTERVAL,
-  PLAY_AUDIO_INTERVAL
+  PLAY_AUDIO_INTERVAL,
 } from '../constants.js';
 
 import { createTimerElement, createAudioElement } from '../views/timerView.js';
@@ -13,7 +13,7 @@ export const initTimer = () => {
   const wrapper = document.querySelector('.wrapper');
   const timerElement = createTimerElement();
   wrapper.prepend(timerElement);
-  
+
   timerElement.innerHTML = '';
 
   if (window.remainingTime === undefined) {

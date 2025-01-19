@@ -1,5 +1,5 @@
 import {
-  GREET_DIV_ID,
+  WELCOME_DIV_ID,
   RESTART_QUIZ_BUTTON_ID,
   FINAL_MSG_ID,
 } from '../constants.js';
@@ -10,7 +10,7 @@ import {
  */
 export const createFinalElement = (score, question) => {
   const element = document.createElement('div');
-  element.id = GREET_DIV_ID;
+  element.id = WELCOME_DIV_ID;
   let message = !window.remainingTime ? `Time's Up!` : '';
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
