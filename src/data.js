@@ -121,3 +121,6 @@ export const quizData = {
     },
   ],
 };
+
+export const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
+export const originalQuizData = deepCopy(quizData);

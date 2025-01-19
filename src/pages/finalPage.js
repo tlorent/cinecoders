@@ -1,7 +1,7 @@
 import { USER_INTERFACE_ID, RESTART_QUIZ_BUTTON_ID } from '../constants.js';
 import { createFinalElement } from '../views/finalView.js';
 
-import { quizData } from '../data.js';
+import { quizData, originalQuizData, deepCopy } from '../data.js';
 import { startQuiz } from './welcomePage.js';
 
 export const initFinalPage = (score, question) => {
@@ -40,6 +40,7 @@ const showGif = (score) => {
 };
 
 const restartQuiz = () => {
+  Object.assign(quizData, deepCopy(originalQuizData));
   quizData.currentQuestionIndex = 0;
   quizData.currentScore = 0;
   startQuiz();

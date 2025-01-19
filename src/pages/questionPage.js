@@ -25,6 +25,7 @@ export const initQuestionPage = () => {
   const newCorrectIndex = randomizedAnswers.indexOf(correctAnswerText);
   currentQuestion.correctAnswerIndex = newCorrectIndex;
 
+  answersListElement.innerHTML = '';
   randomizedAnswers.forEach((randomizedAnswerText, index) => {
     const randomizedAnswerElement = createAnswerElement(
       randomizedAnswerText,
