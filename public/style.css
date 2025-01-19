@@ -65,6 +65,7 @@ body {
   height: 3rem;
   padding: 0.5rem 0.75rem;
   text-align: center;
+  border-color: var(--primary-color);
   background-color: var(--primary-color);
 }
 
@@ -106,6 +107,7 @@ h1 {
   margin: 0.5rem;
   letter-spacing: 2px;
   padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--primary-color);
 }
 
 /* BUTTON STYLES */
@@ -185,6 +187,7 @@ button:active {
 
 .question-heading {
   color: var(--text-color);
+  border-bottom: none;
 }
 .heading-container {
   display: flex;

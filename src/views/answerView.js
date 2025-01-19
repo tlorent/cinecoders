@@ -11,6 +11,7 @@ export const createAnswerElement = (answerText, answerIndex, correctIndex) => {
   answerOptionEl.innerHTML = `${answerText}`;
 
   answerOptionEl.addEventListener('click', () => {
+    console.log(answerIndex, correctIndex);
     checkSelectedAnswer(answerOptionEl, answerIndex, correctIndex);
   });
 

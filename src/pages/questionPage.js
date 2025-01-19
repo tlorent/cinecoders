@@ -19,14 +19,19 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-  Object.values(currentQuestion.answers).forEach((answerText, index) => {
-    const answerElement = createAnswerElement(
-      answerText,
+  const answers = Object.values(currentQuestion.answers);
+  const correctAnswerText = answers[currentQuestion.correctAnswerIndex];
+  const randomizedAnswers = randomizeQuestionOptions(answers);
+  const newCorrectIndex = randomizedAnswers.indexOf(correctAnswerText);
+  currentQuestion.correctAnswerIndex = newCorrectIndex;
+
+  randomizedAnswers.forEach((randomizedAnswerText, index) => {
+    const randomizedAnswerElement = createAnswerElement(
+      randomizedAnswerText,
       index,
       currentQuestion.correctAnswerIndex
     );
-
-    answersListElement.appendChild(answerElement);
+    answersListElement.appendChild(randomizedAnswerElement);
     answersListElement.classList.add('animateWithFadeAndSlide');
   });
 
@@ -50,4 +55,14 @@ const nextQuestion = () => {
 
 export const toFinalPage = () => {
   initFinalPage(quizData.currentScore, quizData.questions.length);
+};
+
+/* The sort() method reorders the elements in the array.
+  The comparator Math.random() - 0.5 generates a random number between -0.5 and 0.5:
+  If the result is negative, the first element is sorted before the second.
+  If positive, the first element is sorted after the second.
+  If zero, the order remains unchanged. 
+  */
+export const randomizeQuestionOptions = (answerTexts) => {
+  return answerTexts.sort(() => Math.random() - 0.5);
 };
