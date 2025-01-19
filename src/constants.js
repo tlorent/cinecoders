@@ -16,7 +16,7 @@ export const PARAGRAPH_ID = 'welcome-paragraph';
 export const WELCOME_DIV_ID = 'welcome-container';
 export const INPUT_FIELD_ID = 'input-data';
 
-export const TIME_LEFT_IN_SEC = 300;
+export const TIME_LEFT_IN_SEC = 120;
 export const MINUTES = 60;
 export const REMAINDER = 25;
 export const PLAY_AUDIO_INTERVAL = 5000;

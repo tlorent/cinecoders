@@ -49,6 +49,10 @@ body {
 .theme-changer {
   order: -1;
 }
+#name {
+  margin-bottom: 1rem;
+  color: #fff;
+}
 .timer {
   order: 0;
 }
@@ -109,7 +113,8 @@ h1 {
   margin: 0.5rem;
   letter-spacing: 2px;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--primary-color);
+  margin-bottom: 0.5rem;
+  border-bottom: 3px solid var(--primary-color);
 }
 
 /* BUTTON STYLES */
@@ -150,9 +155,8 @@ button:active {
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
 }
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -160,11 +164,10 @@ button:active {
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
-  width: 50%;
+  width: 40%;
 }
 
 .centered {
-  width: 100;
   border-radius: 1rem;
 }
 
@@ -175,13 +178,12 @@ button:active {
 }
 
 #welcome-form {
-  width: 100%;
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  width: 100;
-  padding: 2rem 2rem;
-  margin: 1rem;
+  width: 100%;
+  padding: 1rem;
+  margin: 0.75rem;
   backdrop-filter: blur(100px);
   margin: 0 auto;
 }
@@ -366,9 +368,9 @@ ul {
   margin-top: 1rem;
 }
 #welcome-paragraph {
-  font-size: 1.5rem;
-  color: var(--btn-color);
-  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
   margin-top: 3rem;
 }
 .welcome input {
@@ -379,7 +381,6 @@ ul {
   font-weight: 400;
   color: #f55d6c;
   border-bottom: 3px solid var(--primary-color);
-
   padding: 0.5rem 0rem;
 }
 
@@ -408,7 +409,7 @@ input[type='text'] {
   width: 100%;
   text-align: center;
   color: var(--primary-color);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -420,14 +421,12 @@ input[type='text'] {
   align-items: center;
   text-align: center;
   gap: 1rem;
-  width: 100%;
-  margin: 0 auto;
-
+  width: 80%;
+  max-height: 500px;
   padding: 2rem 2rem;
   border-radius: 1.5rem;
-  margin: 1rem;
+  margin: 2rem;
   backdrop-filter: blur(100px);
-  margin: 0 auto;
 }
 .result-gif {
   max-width: 300px;

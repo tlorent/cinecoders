@@ -10,11 +10,14 @@ export const createQuestionElement = (question) => {
   element.id = GRID_CONTAINER_ID;
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-    <div class="heading-container"><span class="question-indicator"> Question ${
+ 
+    <div class="heading-container">
+   
+    <span class="question-indicator"> Question ${
       quizData.currentQuestionIndex + 1
     } </span> 
   <h1 class="question-heading"> ${question}</h1></div>
-
+ 
     <ul id="${ANSWERS_LIST_ID}">
     </ul>
 

@@ -15,7 +15,7 @@ export const createWelcomeElement = () => {
   greetingElement.id = WELCOME_DIV_ID;
   greetingElement.innerHTML = String.raw`
       <h1>Welcome to Our Movie Quiz</h1>
-      <p id="${PARAGRAPH_ID}">You've <span class="highlight">5</span> minutes to test your movie skills!</p>
+      <p id="${PARAGRAPH_ID}">You've <span class="highlight">2</span> minutes to test your movie skills!</p>
    
     <form id="${WELCOME_FORM}">
 
